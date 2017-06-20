@@ -1,0 +1,71 @@
+sphere
+{
+	name(sphere_1)
+	color(255, 0, 0)
+	reflection(1)
+	position(10, 10, 4)
+	radius(2)
+}
+sphere
+{
+	name(sphere_2)
+	color(0, 255, 0)
+	reflection(1)
+	position(10, 0, 4)
+	radius(2)
+}
+sphere
+{
+	name(sphere_3)
+	color(0, 0, 255)
+	reflection(1)
+	position(10, -10, 4)
+	radius(2)
+}
+sphere
+{
+	name(sphere_4)
+	color(255, 0, 255)
+	reflection(1)
+	position(10, 10, -6)
+	radius(2)
+}
+sphere
+{
+	name(sphere_5)
+	color(255, 255, 0)
+	reflection(1)
+	position(10, 0, -6)
+	radius(2)
+}
+sphere
+{
+	name(sphere_6)
+	color(0, 255, 255)
+	reflection(1)
+	position(10, -10, -6)
+	radius(2)
+}
+plan
+{
+	name(ground)
+	position(0, 0, -10)
+	color(255, 255, 255)
+	normal(0, 0, 1)
+	reflection(1)
+}
+lightspot
+{
+	name(light_1)
+	alpha(1000)
+	position(0, 0, 8)
+	intensity(0, 0.4, 200)
+}
+camera
+{
+	name(cam)
+	position(0, 0, 8)
+	distance(10)
+	fov(0.4, 0.3)
+	angle(0, 0, 0)
+}

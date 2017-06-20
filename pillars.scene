@@ -1,0 +1,184 @@
+plan
+{
+	name(ground)
+	position(0, 0, 20)
+	color(255, 255, 255)
+	normal(0, 0, -1)
+	reflection(1)
+}
+plan
+{
+	name(roof)
+	position(0, 0, -20)
+	color(255, 255, 255)
+	normal(0, 0, 1)
+	reflection(1)
+}
+plan
+{
+	name(face)
+	position(100, 0, 0)
+	color(255, 255, 255)
+	normal(-1, 0, 0)
+	reflection(1)
+}
+plan
+{
+	name(back)
+	position(-100, 0, 0)
+	color(255, 255, 255)
+	normal(1, 0, 0)
+	reflection(1)
+}
+plan
+{
+	name(left)
+	position(0, 100, 0)
+	color(255, 255, 255)
+	normal(0, -1, 0)
+	reflection(1)
+}
+plan
+{
+	name(right)
+	position(0, -100, 0)
+	color(255, 255, 255)
+	normal(0, 1, 0)
+	reflection(1)
+}
+cylinder
+{
+	name(cylinder1)
+	position(-50, -50, 0)
+	color(0, 255, 255)
+	reflection(1)
+	normal(0, 0, 1)
+	radius(5)
+}
+cylinder
+{
+	name(cylinder2)
+	position(-50, 50, 0)
+	color(0, 255, 255)
+	reflection(1)
+	normal(0, 0, 1)
+	radius(5)
+}
+cylinder
+{
+	name(cylinder3)
+	position(50, -50, 0)
+	color(0, 255, 255)
+	reflection(1)
+	normal(0, 0, 1)
+	radius(5)
+}
+cylinder
+{
+	name(cylinder4)
+	position(50, 50, 0)
+	color(0, 255, 255)
+	reflection(1)
+	normal(0, 0, 1)
+	radius(5)
+}
+sphere
+{
+	name(spheretop_1)
+	color(0, 255, 255)
+	reflection(1)
+	position(-50, -50, 20)
+	radius(10)
+}
+sphere
+{
+	name(spheretop_2)
+	color(0, 255, 255)
+	reflection(1)
+	position(-50, 50, 20)
+	radius(10)
+}
+sphere
+{
+	name(spheretop_3)
+	color(0, 255, 255)
+	reflection(1)
+	position(50, -50, 20)
+	radius(10)
+}
+sphere
+{
+	name(spheretop_4)
+	color(0, 255, 255)
+	reflection(1)
+	position(50, 50, 20)
+	radius(10)
+}
+sphere
+{
+	name(spheredown_1)
+	color(0, 255, 255)
+	reflection(1)
+	position(-50, -50, -20)
+	radius(10)
+}
+sphere
+{
+	name(spheredown_2)
+	color(0, 255, 255)
+	reflection(1)
+	position(50, -50, -20)
+	radius(10)
+}
+sphere
+{
+	name(spheredown_3)
+	color(0, 255, 255)
+	reflection(1)
+	position(-50, 50, -20)
+	radius(10)
+}
+sphere
+{
+	name(spheredown_4)
+	color(0, 255, 255)
+	reflection(1)
+	position(50, 50, -20)
+	radius(10)
+}
+lightspot
+{
+	name(light_2)
+	alpha(1000)
+	position(-90, -90, 0)
+	intensity(0, 0.3, 100)
+}
+lightspot
+{
+	name(light_3)
+	alpha(1000)
+	position(-90, 90, 0)
+	intensity(0, 0.3, 100)
+}
+lightspot
+{
+	name(light_4)
+	alpha(1000)
+	position(90, -90, 0)
+	intensity(0, 0.3, 100)
+}
+lightspot
+{
+	name(light_5)
+	alpha(1000)
+	position(90, 90, 0)
+	intensity(0, 0.3, 100)
+}
+camera
+{
+	name(cam)
+	position(-90, 0, 0)
+	distance(10)
+	fov(0.4, 0.3)
+	angle(0, 0, 0)
+}

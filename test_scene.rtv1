@@ -1,0 +1,57 @@
+sphere
+{
+	name(red_sphere)
+	color(255, 0, 0)
+	reflection(1)
+	position(10, -0.5, 0)
+	radius(1)
+}
+sphere
+{
+	name(white_sphere)
+	color(255, 255, 255)
+	reflection(1)
+	position(9.5, 0.5, 0)
+	radius(1)
+}
+plan
+{
+	name(blue_plan)
+	position(0, 0, -1)
+	color(255, 255, 255)
+	normal(0, 0, 1)
+	reflection(1)
+}
+cone
+{
+	name(cone)
+	position(-10, -10, -1)
+	color(255, 255, 0)
+	reflection(1)
+	alpha(90)
+	normal(0, 0, 1)
+}
+cylinder
+{
+	name(cylinder)
+	position(-10, 10, 0)
+	color(255, 0, 255)
+	reflection(1)
+	normal(0, 0, 1)
+	radius(2)
+}
+lightspot
+{
+	name(light_1)
+	alpha(100)
+	position(5, 2, 10)
+	intensity(0, 0.4, 100)
+}
+camera
+{
+	name(cam_1)
+	position(10, 0, 1)
+	distance(10)
+	fov(0.4, 0.3)
+	angle(0, 0, 0)
+}
