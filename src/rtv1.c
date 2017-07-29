@@ -43,18 +43,28 @@ void		init_opencl(t_env *env)
 {
 	cl_platform_id	platform;
 	cl_device_id	device;
+	cl_int			error;
+	char			name[128];
 
-	if (clGetPlatformIDs(1, &platform, NULL) != CL_SUCCESS)
+	if ((error = clGetPlatformIDs(1, &platform, NULL)) != CL_SUCCESS)
+	{
+		ft_printf("platform error: %d / %x\n", error, error);
 		return ;
-	if (clGetDeviceIDs(platform, CL_DEVICE_TYPE_GPU, 1, &device, NULL) !=
+	}
+	if ((error = clGetDeviceIDs(platform, CL_DEVICE_TYPE_GPU, 1, &device, NULL)) !=
 	CL_SUCCESS)
+	{
+		ft_printf("device error %d / %x\n", error, error);
 		return ;
+	}
 	env->context = clCreateContext(NULL, 1, &device, NULL, NULL, NULL);
 	env->queue = clCreateCommandQueue(env->context, device, 0, NULL);
 	env->kernel = create_kernel(env, &device, "raytracer.cl",
 	"render_pixel");
 	env->anti_al = create_kernel(env, &device, "antialiasing.cl",
 	"antialiasing");
+	clGetDeviceInfo(device, CL_DEVICE_NAME, 128, name, NULL);
+	ft_printf("device: %s\n", name);
 }
 
 t_env		*init_env(void)
@@ -106,6 +116,18 @@ void		alloc_objects(t_env *env)
 	env->objects[i].type = 0;
 }
 
+void		see_list(t_object *obj)
+{
+	int		i;
+
+	i = 0;
+	while (obj[i].type)
+	{
+		ft_printf("%s\n", obj[i].name);
+		i++;
+	}
+}
+
 int			main(int argc, char **argv)
 {
 	t_env	*env;
@@ -121,6 +143,7 @@ int			main(int argc, char **argv)
 	alloc_objects(env);
 	create_buffers(env);
 	set_args(env);
+	see_list(env->objects);
 	mlx_loop(env->win.mlx);
 	return (0);
 }

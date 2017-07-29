@@ -16,18 +16,18 @@ void	ft_keys_3(t_env *env)
 {
 	t_quat	q;
 
-	if (env->win.keys.tab[123] || env->win.keys.tab[124])
+	if (env->win.keys.tab[261] || env->win.keys.tab[263])
 	{
-		q = create_quaternion(create_vector(0, 0, (env->win.keys.tab[123]) ?
+		q = create_quaternion(create_vector(0, 0, (env->win.keys.tab[261]) ?
 		-ROTATION : ROTATION));
 		env->cam.q = multiply_quaternion(&q, &env->cam.q);
 		env->mem_cam = clCreateBuffer(env->context, CL_MEM_COPY_HOST_PTR,
 		sizeof(t_camera), &env->cam, NULL);
 		clSetKernelArg(env->kernel, 1, sizeof(cl_mem), &env->mem_cam);
 	}
-	if (env->win.keys.tab[126] || env->win.keys.tab[125])
+	if (env->win.keys.tab[262] || env->win.keys.tab[264])
 	{
-		q = create_quaternion(create_vector(0, (env->win.keys.tab[126]) ?
+		q = create_quaternion(create_vector(0, (env->win.keys.tab[262]) ?
 		ROTATION : -ROTATION, 0));
 		env->cam.q = multiply_quaternion(&q, &env->cam.q);
 		env->mem_cam = clCreateBuffer(env->context, CL_MEM_COPY_HOST_PTR,
@@ -40,9 +40,9 @@ void	ft_keys_2(t_env *env)
 {
 	t_vec	d;
 
-	if (env->win.keys.tab[49] || env->win.keys.tab[257])
+	if (env->win.keys.tab[32] || env->win.keys.tab[105])
 	{
-		d = create_vector(0, 0, (env->win.keys.tab[49]) ? STEP : -STEP);
+		d = create_vector(0, 0, (env->win.keys.tab[32]) ? STEP : -STEP);
 		d = rotate_vector(&d, &env->cam.q);
 		env->cam.pos = create_vector(env->cam.pos.x + d.x,
 		env->cam.pos.y + d.y, env->cam.pos.z + d.z);
@@ -67,11 +67,11 @@ void	ft_keys(t_env *env)
 {
 	t_vec	d;
 
-	if (env->win.keys.tab[53])
+	if (env->win.keys.tab[207])
 		ft_exit(env, 0);
-	if (env->win.keys.tab[13] || env->win.keys.tab[1])
+	if (env->win.keys.tab[122] || env->win.keys.tab[115])
 	{
-		d = create_vector((env->win.keys.tab[13]) ? STEP : -STEP, 0, 0);
+		d = create_vector((env->win.keys.tab[122]) ? STEP : -STEP, 0, 0);
 		d = rotate_vector(&d, &env->cam.q);
 		env->cam.pos = create_vector(env->cam.pos.x + d.x,
 		env->cam.pos.y + d.y, env->cam.pos.z + d.z);
@@ -79,9 +79,9 @@ void	ft_keys(t_env *env)
 		sizeof(t_camera), &env->cam, NULL);
 		clSetKernelArg(env->kernel, 1, sizeof(cl_mem), &env->mem_cam);
 	}
-	if (env->win.keys.tab[0] || env->win.keys.tab[2])
+	if (env->win.keys.tab[113] || env->win.keys.tab[100])
 	{
-		d = create_vector(0, (env->win.keys.tab[0]) ? STEP : -STEP, 0);
+		d = create_vector(0, (env->win.keys.tab[113]) ? STEP : -STEP, 0);
 		d = rotate_vector(&d, &env->cam.q);
 		env->cam.pos = create_vector(env->cam.pos.x + d.x,
 		env->cam.pos.y + d.y, env->cam.pos.z + d.z);

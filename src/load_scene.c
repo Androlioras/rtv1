@@ -86,11 +86,9 @@ char		load_scene(t_env *env, char *scene)
 	t_element	*elems;
 	char		*line;
 	int			fd;
-	int			i;
 
 	if ((fd = open(scene, O_RDONLY)) == -1)
 		return (0);
-	i = 0;
 	attribs = get_attributes();
 	elems = get_elements();
 	while (ft_get_next_line(fd, &line))
